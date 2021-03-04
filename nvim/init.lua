@@ -22,6 +22,7 @@ opt('numberwidth', 2, window)
 opt('hidden', true)
 opt('mouse', 'nivh')
 opt('tabstop', 2, buffer)
+opt('shiftwidth', 0, buffer)
 opt('softtabstop', 0, buffer)
 opt('expandtab', true, buffer)
 opt('autoindent', true, buffer)
@@ -41,4 +42,4 @@ require('plugins')
 -- Colorsheme
 -- TODO: try gruvbox.nvim
 opt('termguicolors', true)
-cmd 'colorscheme gruvbox8'
+cmd 'colorscheme one'
