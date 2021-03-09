@@ -73,15 +73,14 @@ return require('packer').startup(function()
     run = ':TSUpdate',
     config = [[require('config.treesitter')]]
   }
-  --[[ use {
+  use {
     'neovim/nvim-lspconfig',
-    event = {'BufRead *'},
-    setup = require'conf.lsp'.setup(),
-    config = require'conf.lsp'.config(),
+    event = {'VimEnter'},
+    config = [[require('config.lsp')]],
     requires = {
       {"alexaandru/nvim-lspupdate", cmd = "LspUpdate"},
-      {'nvim-lua/lsp-status.nvim', opt = true}
+      {'nvim-lua/lsp-status.nvim'}
     }
-  } ]]
+  }
 
 end)

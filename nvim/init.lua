@@ -4,6 +4,7 @@ local o, wo, bo = vim.o, vim.wo, vim.bo
 local utils = require('config.utils')
 local opt, map = utils.opt, utils.map
 
+-- Inspirated from https://github.com/disrupted/dotfiles
 
 
 -- Leader key
@@ -33,6 +34,7 @@ local silent = {silent = true}
 
 map('i', 'kk', '<esc>', silent)
 map('i', 'jj', '<esc>', silent)
+map('t', '<C-W><C-n>', '<C-\\><C-n>', {noremap = true})
 -- Config shortcuts
 map('n', '<leader>ec', ':e $MYVIMRC<CR>', silent)
 map('n', '<leader>sc', ':luafile $MYVIMRC<CR>', silent)
