@@ -14,7 +14,8 @@ return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
   -- Colorsheme
   -- use 'lifepillar/vim-gruvbox8'
-  use "rakr/vim-one"
+  -- use "rakr/vim-one"
+  use "chriskempson/base16-vim"
   -- Statusbar
   use {
   'glepnir/galaxyline.nvim',
@@ -25,7 +26,8 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'psliwka/vim-smoothie' -- Smooth scroll
-  use 'b3nj5m1n/kommentary'
+  use {'norcalli/nvim-colorizer.lua', config = [[require('colorizer').setup()]] } -- Display colors on hex tags
+  use {'b3nj5m1n/kommentary', config = [[require('config.kommentary')]]}
   use {'chaoren/vim-wordmotion', {'justinmk/vim-sneak', config = [[require('config.sneak')]]}}
   use {
     'lukas-reineke/indent-blankline.nvim',
@@ -73,14 +75,14 @@ return require('packer').startup(function()
     run = ':TSUpdate',
     config = [[require('config.treesitter')]]
   }
-  use {
-    'neovim/nvim-lspconfig',
-    event = {'VimEnter'},
-    config = [[require('config.lsp')]],
-    requires = {
-      {"alexaandru/nvim-lspupdate", cmd = "LspUpdate"},
-      {'nvim-lua/lsp-status.nvim'}
-    }
-  }
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   event = {'VimEnter'},
+  --   config = [[require('config.lsp')]],
+  --   requires = {
+  --     {"alexaandru/nvim-lspupdate", cmd = "LspUpdate"},
+  --     {'nvim-lua/lsp-status.nvim'}
+  --   }
+  -- }
 
 end)

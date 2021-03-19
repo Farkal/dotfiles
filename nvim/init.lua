@@ -44,4 +44,4 @@ require('plugins')
 -- Colorsheme
 -- TODO: try gruvbox.nvim
 opt('termguicolors', true)
-cmd 'colorscheme one'
+cmd 'colorscheme base16-onedark'
