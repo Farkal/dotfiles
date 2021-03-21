@@ -75,6 +75,7 @@ return require('packer').startup(function()
     run = ':TSUpdate',
     config = [[require('config.treesitter')]]
   }
+  use {"hrsh7th/nvim-compe", config = [[require("config.nvim-compe")]]}
   -- use {
   --   'neovim/nvim-lspconfig',
   --   event = {'VimEnter'},
