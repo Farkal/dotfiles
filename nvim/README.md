@@ -1,5 +1,6 @@
 ### Browse Files
 ff git files
+ff old files
 fg live grep
 fw grep current string 
 fs git status
