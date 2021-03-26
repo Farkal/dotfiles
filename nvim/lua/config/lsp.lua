@@ -83,12 +83,16 @@ local on_attach = function(client, bufnr)
   end
 end
 
---[[ lspconfig.tsserver.setup {
+lspconfig.pyright.setup{
+  on_attach = on_attach
+}
+
+lspconfig.tsserver.setup {
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
     on_attach(client)
   end
-} ]]
+}
 
 -- EFM Universal Language Server
 -- https://github.com/mattn/efm-langserver
@@ -99,28 +103,28 @@ local black = require "efm/black"
 -- local lua_format = require "efm/lua-format"
 local standard = require "efm/standard"
 
-lspconfig.efm.setup {
-  cmd = {
-    "efm-langserver", "-c", efm_config, "-logfile", log_dir .. "efm.log"
-  },
-  on_attach = on_attach,
-  filetypes = {
-    "python"
-  },
-  init_options = {documentFormatting = true},
-  settings = {
-      rootMarkers = {"package.json", ".git/", ".zshrc"},
-      languages = {
-          python = {black},
-          -- lua = {lua_format},
-          -- yaml = {prettier},
-          -- json = {prettier},
-          -- markdown = {prettier},
-          -- html = {prettier},
-          -- css = {prettier},
-          -- javascript = {standard}
-          -- typescript = {standard}
-      }
-  }
-}
+-- lspconfig.efm.setup {
+--   cmd = {
+--     "efm-langserver", "-c", efm_config, "-logfile", log_dir .. "efm.log"
+--   },
+--   -- on_attach = on_attach,
+--   filetypes = {
+--     "javascript"
+--   },
+--   init_options = {documentFormatting = true},
+--   settings = {
+--       rootMarkers = {"package.json", ".git/", ".zshrc"},
+--       languages = {
+--           -- python = {black},
+--           -- lua = {lua_format},
+--           -- yaml = {prettier},
+--           -- json = {prettier},
+--           -- markdown = {prettier},
+--           -- html = {prettier},
+--           -- css = {prettier},
+--           javascript = {standard}
+--           -- typescript = {standard}
+--       }
+--   }
+-- }
 
