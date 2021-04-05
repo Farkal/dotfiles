@@ -76,14 +76,14 @@ return require('packer').startup(function()
     config = [[require('config.treesitter')]]
   }
   use {"hrsh7th/nvim-compe", config = [[require("config.nvim-compe")]]}
-  -- use {
-  --   'neovim/nvim-lspconfig',
-  --   event = {'VimEnter'},
-  --   config = [[require('config.lsp')]],
-  --   requires = {
-  --     {"alexaandru/nvim-lspupdate", cmd = "LspUpdate"},
-  --     {'nvim-lua/lsp-status.nvim'}
-  --   }
-  -- }
+  use {
+    'neovim/nvim-lspconfig',
+    event = {'VimEnter'},
+    config = [[require('config.lsp')]],
+    requires = {
+      {"alexaandru/nvim-lspupdate", cmd = "LspUpdate"},
+      {'nvim-lua/lsp-status.nvim'}
+    }
+  }
 
 end)

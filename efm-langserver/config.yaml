@@ -4,3 +4,50 @@ log-level: 1
 root-markers:
   - .git/
   - package.json
+
+tools:
+  javascript-standard: &javascript-standard
+    lint-command: 'standard ${INPUT}'
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - "  %f:%l:%c: %m"
+    format-command: 'standard --fix --stdin ${INPUT} || true'
+    format-stdin: true
+
+  luafmt: &luafmt
+    format-command: "luafmt --stdin"
+    format-stdin: true
+
+
+  # black: &black
+  #   format-command: "black -"
+  #   format-stdin: true
+
+  # yamllint: &yamllint
+  #   lint-command: "yamllint -c ~/.config/efm-langserver/yamllint.yaml -f parsable -"
+  #   lint-stdin: true
+  #   format-command: "prettier --stdin"
+  #   format-stdin: true
+
+  # rustfmt: &rustfmt
+  #   format-command: "cargo fmt -"
+  #   format-stdin: true
+
+  # clippy: &clippy
+  #   lint-command: "cargo clippy"
+
+languages:
+  javascript:
+    - <<: *javascript-standard
+  lua:
+    - <<: *luafmt
+  # python:
+  #   - <<: *black
+  # markdown:
+  #   - <<: *prettier
+  #   - <<: *markdownlint
+  # rust:
+  #   - <<: *rustfmt
+  #   - <<: *clippy
+
