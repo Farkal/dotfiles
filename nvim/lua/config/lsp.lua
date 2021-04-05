@@ -114,6 +114,10 @@ lspconfig.tsserver.setup {
     end
 }
 
+lspconfig.pyright.setup {
+    on_attach = on_attach
+}
+
 -- EFM Universal Language Server
 -- https://github.com/mattn/efm-langserver
 -- local black = require "efm/black"
