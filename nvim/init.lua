@@ -8,6 +8,7 @@ local opt, map = utils.opt, utils.map
 
 -- Leader key
 g.mapleader = ","
+g.auto_save = 1
 
 local window = {o, wo}
 local buffer = {o, bo}
@@ -27,6 +28,7 @@ opt("softtabstop", 0, buffer)
 opt("expandtab", true, buffer)
 opt("autoindent", true, buffer)
 opt("smartindent", true, buffer)
+opt("iskeyword", "@,48-57,_,192-255,-", buffer) -- Add - to keyword list
 opt("clipboard", "unnamedplus")
 
 local silent = {silent = true}

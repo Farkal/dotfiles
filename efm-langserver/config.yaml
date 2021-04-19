@@ -16,7 +16,7 @@ tools:
     format-stdin: true
 
   luafmt: &luafmt
-    format-command: "luafmt --stdin"
+    format-command: "luafmt -i 2 --stdin"
     format-stdin: true
 
 
@@ -47,7 +47,4 @@ languages:
   # markdown:
   #   - <<: *prettier
   #   - <<: *markdownlint
-  # rust:
-  #   - <<: *rustfmt
-  #   - <<: *clippy
 
