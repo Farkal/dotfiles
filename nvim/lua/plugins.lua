@@ -31,6 +31,11 @@ return require("packer").startup(
     use {"norcalli/nvim-colorizer.lua", config = [[require('colorizer').setup()]]} -- Display colors on hex tags
     use {"windwp/nvim-autopairs", config = [[require('config.autopairs')]]}
     use {"b3nj5m1n/kommentary", config = [[require('config.kommentary')]]}
+    use {"folke/todo-comments.nvim", 
+      config = function() 
+        require("todo-comments").setup{} 
+      end
+    }
     use {
       "chaoren/vim-wordmotion",
       config = [[require('config.wordmotion')]]
