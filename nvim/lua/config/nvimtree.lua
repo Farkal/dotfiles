@@ -1,6 +1,7 @@
 local g = vim.g
 local opts = {noremap = true, silent = true}
 
+require("nvim-tree").setup {}
 g.nvim_tree_side = "left"
 g.nvim_tree_width = 35
 g.nvim_tree_ignore = {".git", "node_modules", ".cache"}

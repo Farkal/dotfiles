@@ -51,7 +51,7 @@ return require("packer").startup(
     use {
       "kyazdani42/nvim-tree.lua",
       -- cmd = {'NvimTreeOpen', 'NvimTreeToggle'},
-      setup = [[require('config.nvimtree')]],
+      config = [[require('config.nvimtree')]],
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
     use {
@@ -59,13 +59,13 @@ return require("packer").startup(
       config = [[require('config.telescope')]],
       requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
     }
-    use {
-      "nvim-telescope/telescope-frecency.nvim",
-      requires = {"tami5/sql.nvim"},
-      config = function()
-        require "telescope".load_extension("frecency")
-      end
-    }
+    -- use {
+    --   "nvim-telescope/telescope-frecency.nvim",
+    --   requires = {"tami5/sql.nvim"},
+    --   config = function()
+    --     require "telescope".load_extension("frecency")
+    --   end
+    -- }
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
